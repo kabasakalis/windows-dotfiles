@@ -640,12 +640,6 @@ let g:UltiSnipsJumpForwardTrigger='<leader>n'
 " let g:ycm_key_list_previous_completion=[]
 "}}}
 
-" -----------------------------------------------------
-" Vim Markdown settings {{{
-" -----------------------------------------------------
-let g:vim_markdown_no_default_key_mappings=1
-let g:vim_markdown_folding_disabled=1
-"}}}
 
 
 
@@ -655,6 +649,89 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_no_default_key_mappings=1
 let g:vim_markdown_folding_disabled=1
 "}}}
+
+
+" Quiting and saving all
+cnoremap ww wqall
+cnoremap qq qall
+cnoremap <ESC><ESC> qall!<CR>
+
+"Delete Current File
+nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
+
+" Toggle between normal and relative numbering.
+nnoremap <leader>\ :call utils#NumberToggle()<cr>
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+Use CamelCaseMotion instead of default motions
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+
+
+" nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
+" nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
+" nnoremap <silent> <C-Up> :resize +1<CR>
+" nnoremap <silent> <C-Down> :resize -1<CR>
+
+" Intelligent windows resizing using ctrl + arrow keys
+" Easier for Poker 3.
+nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
+nnoremap <silent> <Left> :call utils#intelligentVerticalResize('left')<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
+
+" Quicker window movement
+nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+
+
+" Start search on current word under the cursor
+nnoremap ,/ /<CR>
+
+" Start reverse search on current word under the cursor
+nnoremap ,? ?<CR>
+
+" Location list navigation
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
+
+" Error mnemonic (Neomake uses location list)
+nnoremap ]e :lnext<CR>
+nnoremap [e :lprevious<CR>
+
+" Quick-fix window navigation
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+
+" vim-test mappings
+map <silent> <leader>f :TestFile<CR>
+map <silent> <leader>T :TestSuite<CR>
+map <silent> <leader>t :TestNearest<CR>
+map <silent> <leader>. :TestLast<CR>
+"map <silent> <leader>g :TestVisit<CR>
+
+" allows you to visually select a section and then hit @ to run a macro on all lines
+" https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.3dcn9prw6
+xnoremap @ :<C-u>call utils#ExecuteMacroOverVisualRange()<CR>
+
+" CTags generation / navigation (:tselect to select from menu)
+nnoremap ]t :tn<CR>
+nnoremap [t :tp<CR>
+nnoremap ,ts :ts<CR>
+"nnoremap ,tg :GenerateTags<CR>
+
+
+"" Turn off recording
+map q <Nop>
 
 
 " -----------------------------------------------------

@@ -1,9 +1,7 @@
-" ---------------------------------------------------------------------------------------------------------------------
-" Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults) {{{
-" ======================================================================================================================
 
-filetype indent on                " Enable filetype-specific indenting
-filetype plugin on                " Enable filetype-specific plugins
+" ======================================================================================================================
+" Core settings, also used in Visual Studio  {{{
+" ======================================================================================================================
 
 let mapleader=" "                 " leader
 set tabstop=2
@@ -46,40 +44,18 @@ set incsearch                     " incremental searching
 " Save file
 nnoremap <Leader>s :w<CR>
 
-" Quiting and saving all
-cnoremap ww wqall
-cnoremap qq qall
-cnoremap <ESC><ESC> qall!<CR>
-
 
 " Quicker window movement
-nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
-" up and down have been  mapped to tmux window navigation
+" up and down have been  mapped to tmux window navigation, not used in Windows.
 " nnoremap <C-j> <C-w>j
 " nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-
-" Intelligent windows resizing using ctrl + arrow keys
-" Easier for Poker 3.
-nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
-nnoremap <silent> <Left> :call utils#intelligentVerticalResize('left')<CR>
-nnoremap <silent> <Up> :resize +1<CR>
-nnoremap <silent> <Down> :resize -1<CR>
-
-" nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
-" nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
-" nnoremap <silent> <C-Up> :resize +1<CR>
-" nnoremap <silent> <C-Down> :resize -1<CR>
-
-nnoremap <silent> ,r zR
+nnoremap ,r zR
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
-
-" Toggle between normal and relative numbering.
-nnoremap <leader>\ :call utils#NumberToggle()<cr>
 
 " Buffers navigation and management
 nnoremap <leader>] :bn<CR>
@@ -90,13 +66,8 @@ map <C-x> :bn<cr>:bd #<cr>:bp<cr>
 "Close all buffers
 "map <C-c> :bufdo bd<cr>
 
-"Delete Current File
-nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
-
-" Quickly open a vertical split of my init.vim and source my init.vim
-nnoremap <silent> <leader>ev :vs ~/.config/nvim/init.vim<CR>
-" Reload init.vim
-"nnoremap <silent> <leader>sv :so ~/.config/nvim/init.vim<CR>
+" Quickly open a vertical split of my vimrc and source my vimrc
+nnoremap  <leader>ev :vs c:\Users\spiros\_vimrc<CR>
 
 " H to beginning of line, L to the end
 noremap H ^
@@ -146,49 +117,24 @@ vnoremap K :m '<-2<CR>gv=gv
 nmap cw ce
 nmap dw de
 
-" Quick-fix window navigation
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprevious<CR>
-
-" Location list navigation
-nnoremap ]l :lnext<CR>
-nnoremap [l :lprevious<CR>
-
-" Error mnemonic (Neomake uses location list)
-nnoremap ]e :lnext<CR>
-nnoremap [e :lprevious<CR>
-
-" CTags generation / navigation (:tselect to select from menu)
-nnoremap ]t :tn<CR>
-nnoremap [t :tp<CR>
-nnoremap ,ts :ts<CR>
-"nnoremap ,tg :GenerateTags<CR>
-
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 " [S]plit line (sister to [J]oin lines) S is covered by cc.
 nnoremap <leader>c mzi<CR><ESC>`z
 
-
 " Start substitute,replace on current word under the cursor
 nnoremap ,s :%s///gc<Left><Left><Left>
-
-" Start search on current word under the cursor
-nnoremap ,/ /<CR>
-
-" Start reverse search on current word under the cursor
-nnoremap ,? ?<CR>
 
 " Faster sort
 vnoremap ,s :!sort<CR>
 
 " Easier fold toggling
 " Toggle
-nnoremap <silent> ,n za
+nnoremap ,n za
 " Close all
-nnoremap <silent> ,m zM
+nnoremap ,m zM
 " Open  all
-nnoremap <silent> ,r zR
+nnoremap ,r zR
 
 " Enter gives a new line when in command mode without entering insert mode. Likewise, shift+enter gives a new line
 " above the cursor
@@ -216,38 +162,66 @@ nnoremap <C-o> <C-o>zz
 vnoremap <C-u> <C-u>zz
 vnoremap <C-o> <C-o>zz
 
-" Use CamelCaseMotion instead of default motions
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-map <silent> ge <Plug>CamelCaseMotion_ge
-sunmap w
-sunmap b
-sunmap e
-sunmap ge
-
-
-" vim-test mappings
-map <silent> <leader>f :TestFile<CR>
-map <silent> <leader>T :TestSuite<CR>
-map <silent> <leader>t :TestNearest<CR>
-map <silent> <leader>. :TestLast<CR>
-"map <silent> <leader>g :TestVisit<CR>
-
-" allows you to visually select a section and then hit @ to run a macro on all lines
-" https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.3dcn9prw6
-xnoremap @ :<C-u>call utils#ExecuteMacroOverVisualRange()<CR>
-
-"" Turn off recording
-map q <Nop>
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
 "" Split line (opposite of J)
 nnoremap <CR> i<CR><Esc>
 
 "}}}
 
+" ======================================================================================================================
+" Visual Studio Commands {{{
+" ======================================================================================================================
+
+" Switch to Solution Explorer
+nmap <leader><leader> :vsc View.SolutionExplorer<CR>
+
+" Next Previous Window
+nmap <leader>j :vsc Window.PreviousTab<CR>
+nmap <leader>k :vsc Window.NextTab<CR>
+
+
+" Next Previous Tab
+nmap <leader>v :vsc Window.NewVerticalTabGroup<CR>
+nmap <leader>h :vsc Window.NewHorizontalTabGroup<CR>
+
+
+" Navigate Forward and back
+nmap <leader>u :vsc View.NavigateBackward<CR>
+nmap <leader>o :vsc View.NavigateForward<CR>
+
+
+" Move File to Next/ Previous Window
+nmap mn :vsc Window.MovetoNextTabGroup<CR>
+nmap mp :vsc Window.MovetoPreviousTabGroup<CR>
+
+" Close File
+nmap cc :vsc Window.CloseDocumentWindow<CR>
+
+" Close All Files
+nmap ca :vsc Window.CloseAllDocuments<CR>
+
+" Comment Code Block Ctrl+K+C/Ctrl+K+U
+
+" Comment line
+nmap ,c :vsc Edit.CommentSelection<CR>
+nmap ,x :vsc Edit.UncommentSelection<CR>
+
+
+" Find in File
+nmap ff :vsc Edit.ReverseIncrementalSearch<CR>
+
+" Find Files
+nmap <leader>p :vsc Edit.GoToAll<CR>
+
+
+" Add folder or file in Solution Explorer
+nmap <leader>n :vsc File.AddItem<CR>
+
+"  Move lines ALT and arrows UP and DOWN
+" nmap NOT_WORKING :vsc Edit.MoveSelectedLinesDown <CR>
+" nmap NOT_WORKING :vsc Edit.MoveSelectedLinesUp <CR>
+
+" Easy Motion
+" Shift+Control+;.
+
+
+"}}}
