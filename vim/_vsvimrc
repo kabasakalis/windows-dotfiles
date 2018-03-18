@@ -194,7 +194,7 @@ nmap mn :vsc Window.MovetoNextTabGroup<CR>
 nmap mp :vsc Window.MovetoPreviousTabGroup<CR>
 
 " Close File
-nmap cc :vsc Window.CloseDocumentWindow<CR>
+nmap <leader>x :vsc Window.CloseDocumentWindow<CR>
 
 " Close All Files
 nmap ca :vsc Window.CloseAllDocuments<CR>
@@ -204,7 +204,6 @@ nmap ca :vsc Window.CloseAllDocuments<CR>
 " Comment line
 nmap ,c :vsc Edit.CommentSelection<CR>
 nmap ,x :vsc Edit.UncommentSelection<CR>
-
 
 " Find in File
 nmap ff :vsc Edit.ReverseIncrementalSearch<CR>
@@ -223,5 +222,6 @@ nmap <leader>n :vsc File.AddItem<CR>
 " Easy Motion
 " Shift+Control+;.
 
+" Context Menu: Shift + F10
 
 "}}}
