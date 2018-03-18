@@ -1,7 +1,7 @@
-" Author : Spiros Kabasakalis <Kabasakalis@gmail.com>                                                                ###
+" Author : Spiros Kabasakalis <Kabasakalis@gmail.com>                                                            ###
 " ######################################################################################################################
-" ### Vim Configuration  for Windows                                                                                 ###
-" ### Vimmer since : Thu Apr 14 2016                                                                              ###
+" ### Neovim Configuration                                                                                           ###
+" ### Neovimmer since : Thu Apr 14 2016                                                                              ###                                                                             ###
 " ######################################################################################################################
 
 
@@ -13,17 +13,11 @@ if filereadable(expand("$HOME/plugins.vim"))
 endif
 "}}}
 
-
-" Core Settings, also used by Visual Studio {{{
-if filereadable(expand("$HOME/_vsvimrc"))
-   source $HOME/_vsvimrc
-endif
-"}}}
-
-
 " ---------------------------------------------------------------------------------------------------------------------
 " Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults) {{{
 " ======================================================================================================================
+
+
 
 filetype indent on                " Enable filetype-specific indenting
 filetype plugin on                " Enable filetype-specific plugins
@@ -147,13 +141,22 @@ hi! link BufTabLineHidden Comment
 hi! link BufTabLineFill Comment
 "}}}
 
+" ---------------------------------------------------------------------------------------------------------------------
+" Search settings {{{
+" ---------------------------------------------------------------------------------------------------------------------
+set ignorecase                    " Ignore case by default
+set smartcase                     " Make search case sensitive only if it contains uppercase letters
+set wrapscan                      " Search again from top when reached the bottom
+set nohlsearch                    " Don't highlight after search
+set incsearch                     " incremental searching
+"}}}
 
 " ---------------------------------------------------------------------------------------------------------------------
 " Persistent undo settings {{{
 " ---------------------------------------------------------------------------------------------------------------------
 if has('persistent_undo')
   set undofile
-  set undodir=$HOME/vimundo
+  set undodir=~/.config/nvim/undo//
 endif
 "}}}
 
@@ -206,6 +209,218 @@ set nospell                       " Disable checking by default (use <F4> to tog
 " set wildignore+=tmp/**
 "}}}
 
+
+" ---------------------------------------------------------------------------------------------------------------------
+" Core key bindings-Remappings {{{
+" ======================================================================================================================
+
+" Save file
+nnoremap <Leader>s :w<CR>
+
+" Quiting and saving all
+cnoremap ww wqall
+cnoremap qq qall
+cnoremap <ESC><ESC> qall!<CR>
+
+
+" Quicker window movement
+nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
+" up and down have been  mapped to tmux window navigation
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+
+" Intelligent windows resizing using ctrl + arrow keys
+" Easier for Poker 3.
+nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
+nnoremap <silent> <Left> :call utils#intelligentVerticalResize('left')<CR>
+nnoremap <silent> <Up> :resize +1<CR>
+nnoremap <silent> <Down> :resize -1<CR>
+
+" nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
+" nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
+" nnoremap <silent> <C-Up> :resize +1<CR>
+" nnoremap <silent> <C-Down> :resize -1<CR>
+
+nnoremap <silent> ,r zR
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Toggle between normal and relative numbering.
+nnoremap <leader>\ :call utils#NumberToggle()<cr>
+
+" Buffers navigation and management
+nnoremap <leader>] :bn<CR>
+nnoremap <leader>[  :bp<CR>
+"Close buffer workaround
+map <C-x> :bn<cr>:bd #<cr>:bp<cr>
+
+"Close all buffers
+"map <C-c> :bufdo bd<cr>
+
+"Delete Current File
+nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
+
+" Quickly open a vertical split of my init.vim and source my init.vim
+nnoremap <silent> <leader>ev :vs ~/.config/nvim/init.vim<CR>
+" Reload init.vim
+"nnoremap <silent> <leader>sv :so ~/.config/nvim/init.vim<CR>
+
+" H to beginning of line, L to the end
+noremap H ^
+noremap L $
+
+" D deletes to the end of the line, and Y yanks to end of line
+nnoremap D d$
+nnoremap Y y$
+
+" place whole file on the system clipboard (and return cursor to where it was)
+nmap <Leader>a maggVG"*y`a
+
+" Select all contents of file
+nmap <Leader>v <esc>ggVG<CR>
+
+" After block yank and paste, move cursor to the end of operated text and don't override register
+vnoremap y y`]
+vnoremap p "_dP`]
+nnoremap p p`]
+
+" Yank and paste from clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>yy "+yy
+nnoremap <leader>p "+p
+
+" have x (removes single character) not go into the default registry
+nnoremap x "_x
+" Make X an operator that removes without placing text in the default registry
+nmap X "_d
+nmap XX "_dd
+vmap X "_d
+vmap x "_d
+
+" Don't yank to default register when changing something
+nnoremap c "xc
+xnoremap c "xc
+
+" Reselect last-pasted text
+nnoremap gp `[v`]
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Fix the cw at the end of line bug default Vim has special treatment (:help cw)
+nmap cw ce
+nmap dw de
+
+" Quick-fix window navigation
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+
+" Location list navigation
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
+
+" Error mnemonic (Neomake uses location list)
+nnoremap ]e :lnext<CR>
+nnoremap [e :lprevious<CR>
+
+" CTags generation / navigation (:tselect to select from menu)
+nnoremap ]t :tn<CR>
+nnoremap [t :tp<CR>
+nnoremap ,ts :ts<CR>
+"nnoremap ,tg :GenerateTags<CR>
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+" [S]plit line (sister to [J]oin lines) S is covered by cc.
+nnoremap <leader>c mzi<CR><ESC>`z
+
+
+" Start substitute,replace on current word under the cursor
+nnoremap ,s :%s///gc<Left><Left><Left>
+
+" Start search on current word under the cursor
+nnoremap ,/ /<CR>
+
+" Start reverse search on current word under the cursor
+nnoremap ,? ?<CR>
+
+" Faster sort
+vnoremap ,s :!sort<CR>
+
+" Easier fold toggling
+" Toggle
+nnoremap <silent> ,n za
+" Close all
+nnoremap <silent> ,m zM
+" Open  all
+nnoremap <silent> ,r zR
+
+" Enter gives a new line when in command mode without entering insert mode. Likewise, shift+enter gives a new line
+" above the cursor
+nmap <CR> o<Esc>
+nnoremap <S-Enter> O<Esc>
+
+" Have the indent commands re-highlight the last visual selection to make
+" multiple indentations easier
+vnoremap > >gv
+vnoremap < <gv
+
+" Make the dot command work as expected in visual mode (via
+" https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04)
+vnoremap . :norm.<CR>
+
+" Center screen when jumping to next match
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
+
+" Center screen when moving up and down
+nnoremap <C-u> <C-u>zz
+nnoremap <C-o> <C-o>zz
+vnoremap <C-u> <C-u>zz
+vnoremap <C-o> <C-o>zz
+
+" Use CamelCaseMotion instead of default motions
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+
+
+" vim-test mappings
+map <silent> <leader>f :TestFile<CR>
+map <silent> <leader>T :TestSuite<CR>
+map <silent> <leader>t :TestNearest<CR>
+map <silent> <leader>. :TestLast<CR>
+"map <silent> <leader>g :TestVisit<CR>
+
+" allows you to visually select a section and then hit @ to run a macro on all lines
+" https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db#.3dcn9prw6
+xnoremap @ :<C-u>call utils#ExecuteMacroOverVisualRange()<CR>
+
+"" Turn off recording
+map q <Nop>
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"" Split line (opposite of J)
+nnoremap <CR> i<CR><Esc>
+
+"}}}
 
 " -----------------------------------------------------
 " vim-tmux-navigator {{{
@@ -291,7 +506,7 @@ let g:startify_commands = [
     \ ['Vim Reference', 'h ref']
     \ ]
 
-" let g:sk = ['Spiros Kabasakalis Vim']
+" let g:sk = ['Spiros Kabasakalis Vim']                                                                                                         ]
 
 " let g:startify_custom_header = g:sk
 
@@ -317,7 +532,6 @@ let g:startify_session_before_save = [
 
 nnoremap <silent> ,z :Startify<CR>
 "}}}
-
 " -----------------------------------------------------
 " tree Config {{{
 " -----------------------------------------------------
@@ -520,8 +734,8 @@ imap <silent> <Tab> <Plug>(cm_force_refresh)
 " imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
 " imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-t>":"\<CR>")
 
-" imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "")
-" imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-t>":"")
+imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "")
+imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-t>":"")
 
 
 
@@ -538,6 +752,46 @@ imap <silent> <Tab> <Plug>(cm_force_refresh)
 
 "}}}
 "
+
+" -----------------------------------------------------
+" Deoplete autocomplete {{{
+" -----------------------------------------------------
+let g:deoplete#enable_at_startup = 0 "stupid deoplete is super buggy, lags like crazy in INSERT MODE. Stupid Jap.
+let g:deoplete#auto_completion_start_length = 1
+let g:deoplete#enable_smart_case = 1
+
+" g:deoplete#disable_auto_complete = 1
+
+set completeopt+=noinsert
+set completeopt-=preview
+
+let g:deoplete#omni#input_patterns={}
+let g:deoplete#sources={}
+
+" let g:deoplete#sources._    = ['buffer', 'file', 'ultisnips']
+" let g:deoplete#sources.vim  = ['buffer', 'member', 'file', 'ultisnips']
+" let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni', 'ultisnips']
+" let g:deoplete#sources.scss = ['buffer', 'member', 'file', 'omni', 'ultisnips']
+
+" Insert <TAB> or select next match inoremap <silent> <expr> <Tab> utils#tabComplete() Manually trigger tag autocomplete
+" inoremap <silent> <expr> <C-]> utils#manualTagComplete()
+" " <C-h>, <BS>: close popup and delete backword char
+" inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
+" Set async completion.
+" set omnifunc=syntaxcomplete#Complete
+
+"ruby complete -------------------------------------------------------------
+" au FileType ruby setl omnifunc=monster#omnifunc
+" autocmd FileType ruby set omnifunc=monster#omnifunc
+let g:deoplete#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:deoplete#sources.ruby = ['buffer', 'member', 'file', 'ultisnips']
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:deoplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
+
+"}}}
 
 " -----------------------------------------------------
 " Smooth scroll vim-smooth-scroll {{{
@@ -648,6 +902,12 @@ let g:vim_markdown_folding_disabled=1
 "}}}
 
 
+" -----------------------------------------------------
+" Localvimrc per project type configuration {{{
+" -----------------------------------------------------
+let g:localvimrc_name=[ ".cpp_init.vim" ]
+
+"}}}
 
 " -----------------------------------------------------
 " Vim Markdown settings {{{
@@ -740,10 +1000,14 @@ augroup END
 "F1 Cannot be assigned for some reason in Ubuntu 16.04
 
 "F2 Source (reload configuration)
-nnoremap <silent> <F2> :so $HOME/_vimrc<CR>
+nnoremap <silent> <F2> :so ~/.config/nvim/init.vim<CR>
+
+"F3 NeoTerm Toggle
+nnoremap <silent> <F3> :Ttoggle<cr>
 
 "F4 Toggle white characters visibility
 nnoremap <silent> <F4> :set list!<CR> :set list?<CR>
 
 "F12 Show F keys toggles
 nnoremap <F12> :call utils#showToggles()<CR>
+
