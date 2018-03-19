@@ -178,11 +178,9 @@ nmap <leader><leader> :vsc View.SolutionExplorer<CR>
 nmap <leader>j :vsc Window.PreviousTab<CR>
 nmap <leader>k :vsc Window.NextTab<CR>
 
-
 " Next Previous Tab
 nmap <leader>v :vsc Window.NewVerticalTabGroup<CR>
 nmap <leader>h :vsc Window.NewHorizontalTabGroup<CR>
-
 
 " Navigate Forward and back
 nmap <leader>u :vsc View.NavigateBackward<CR>
@@ -202,8 +200,8 @@ nmap ca :vsc Window.CloseAllDocuments<CR>
 " Comment Code Block Ctrl+K+C/Ctrl+K+U
 
 " Comment line
-nmap ,c :vsc Edit.CommentSelection<CR>
-nmap ,x :vsc Edit.UncommentSelection<CR>
+nmap gcc :vsc Edit.CommentSelection<CR>
+nmap gxx :vsc Edit.UncommentSelection<CR>
 
 " Find in File
 nmap ff :vsc Edit.ReverseIncrementalSearch<CR>
@@ -211,13 +209,43 @@ nmap ff :vsc Edit.ReverseIncrementalSearch<CR>
 " Find Files
 nmap <leader>p :vsc Edit.GoToAll<CR>
 
+" Quick Find
+nmap  qf :vsc Edit.SwitchtoQuickFind<CR>
+
+" Quick Replace
+nmap  qr :vsc Edit.SwitchtoQuickReplace<CR>
+
+" Find In Files
+nmap  fif :vsc Edit.SwitchtoFindinFiles<CR>
+
+" Replace In Files
+nmap  rif :vsc Edit.SwitchtoReplaceInFiles<CR>
+
+" Format Document
+nmap  fd :vsc Edit.FormatDocument<CR>
+
+" Format Selection
+vmap  fs :vsc Edit.FormatSelection<CR>
+
+" Make  Uppercase
+vmap  mu :vsc Edit.MakeUppercase<CR>
+
+" Make  Lowercase
+vmap  ml :vsc Edit.MakeLowercase<CR>
+
+" Peek Definition
+map  pd :vsc Edit.PeekDefinition<CR>
+
+" View Call Hierarchy
+map  ch :vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
 
 " Add folder or file in Solution Explorer
 nmap <leader>n :vsc File.AddItem<CR>
 
-"  Move lines ALT and arrows UP and DOWN
-" nmap NOT_WORKING :vsc Edit.MoveSelectedLinesDown <CR>
-" nmap NOT_WORKING :vsc Edit.MoveSelectedLinesUp <CR>
+
+"  Move lines up or down (native VS keybindings ALT and arrows UP and DOWN)
+" vmap UNASSIGNED :vsc Edit.MoveSelectedLinesDown<CR>
+" vmap UNASSIGNED :vsc Edit.MoveSelectedLinesUp<CR>
 
 " Easy Motion
 " Shift+Control+;.
