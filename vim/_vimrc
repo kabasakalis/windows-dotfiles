@@ -1,10 +1,10 @@
 " Author : Spiros Kabasakalis <Kabasakalis@gmail.com>                                                                ###
 " ######################################################################################################################
 " ### Vim Configuration  for Windows                                                                                 ###
-" ### Vimmer since : Thu Apr 14 2016                                                                              ###
+" ### Vimmer since : Thu Apr 14 2016                                                                                 ###
 " ######################################################################################################################
 
-
+let g:windows_vim = 1
 let home_path = $HOME
 
 " Plugins managed with vim-plug {{{
@@ -20,13 +20,13 @@ if filereadable(expand("$HOME/_vsvimrc"))
 endif
 "}}}
 
-
 " ---------------------------------------------------------------------------------------------------------------------
 " Basic settings (Neovim defaults: https://neovim.io/doc/user/vim_diff.html#nvim-option-defaults) {{{
 " ======================================================================================================================
 
 filetype indent on                " Enable filetype-specific indenting
 filetype plugin on                " Enable filetype-specific plugins
+set omnifunc=syntaxcomplete#Complete
 
 let mapleader=" "                 " leader
 set nocompatible                  " choose no compatibility with legacy vi
@@ -75,9 +75,11 @@ set ttyfast
 " Save temporary/backup files not in the local directory, but in your ~/.vim
 " directory, to keep them out of git repos.
 " Pretty sure you need to mkdir backup, swap, and undo first to make this work
-" set backupdir=~/.config/nvim/backup//
-" set directory=~/.config/nvim/swap//
-" set undodir=~/.config/nvim/undo//
+
+set backupdir="C://Users//spiros//_vimbackup"
+set directory="C://Users//spiros//_vimswap"
+set undodir="C://Users//spiros//_vimundo"
+
 
 "}}}
 
@@ -98,9 +100,6 @@ set ttyfast
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 
-" if (has("termguicolors"))
-"   set termguicolors
-" endif
 
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   " Turn syntax highlighting on
@@ -153,7 +152,7 @@ hi! link BufTabLineFill Comment
 " ---------------------------------------------------------------------------------------------------------------------
 if has('persistent_undo')
   set undofile
-  set undodir=$HOME/vimundo
+  set undodir=$HOME\vimundo
 endif
 "}}}
 
@@ -188,7 +187,6 @@ set fillchars="fold: "            " Characters to fill the statuslines and verti
 " ---------------------------------------------------------------------------------------------------------------------
 " Spelling settings {{{
 " ---------------------------------------------------------------------------------------------------------------------
-set spellfile=~/.config/nvim/dictionary.utf-8.add
 set spelllang=en_us               " Set language to US English
 set nospell                       " Disable checking by default (use <F4> to toggle)
 "}}}
@@ -196,28 +194,16 @@ set nospell                       " Disable checking by default (use <F4> to tog
 " ---------------------------------------------------------------------------------------------------------------------
 " Omni completion settings {{{
 " ---------------------------------------------------------------------------------------------------------------------
-" set completeopt-=preview          " Don't show preview scratch buffers
-" set wildignore=*.o,*.obj,*~
-" " set wildignore+=*.png,*.jpg,*.jpeg
-" set wildignore+=*vim/backups*
-" set wildignore+=*sass-cache*
-" set wildignore+=*DS_Store*
-" set wildignore+=*.gem
-" set wildignore+=tmp/**
+set completeopt-=preview          " Don't show preview scratch buffers
+set wildignore=*.o,*.obj,*~
+" set wildignore+=*.png,*.jpg,*.jpeg
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=*.gem
+set wildignore+=tmp/**
 "}}}
 
-
-" -----------------------------------------------------
-" vim-tmux-navigator {{{
-" -----------------------------------------------------
-"" also see settings in tmux.conf Alternatives for next/previous windows.
-"" tmux left right window navigation
-
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-j> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-k> :TmuxNavigateRight<cr>
-
-"}}}
 
 " -----------------------------------------------------
 " CtrlP Config {{{
@@ -290,10 +276,6 @@ let g:startify_list_order = [
 let g:startify_commands = [
     \ ['Vim Reference', 'h ref']
     \ ]
-
-" let g:sk = ['Spiros Kabasakalis Vim']
-
-" let g:startify_custom_header = g:sk
 
 let g:startify_custom_header = [' ',' ', '   Spiros Kabasakalis', '   Custom Vim Setup']
 let g:startify_custom_footer =
@@ -378,32 +360,6 @@ nnoremap <silent> <Leader>h :NERDTreeToggle<CR>
 
 " map <Leader>n :NERDTreeToggle<CR>
 
-"}}}
-
-
-"  -------------------------------------------
-"  w0rp/ale, Asynchronous maker and linter {{{
-" https://github.com/w0rp/ale/blob/master/doc/ale.txt
-" ----------------------------------------------------
-let g:ale_enabled = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-" highlight clear ALEErrorSign
-" highlight clear ALEWarningSign
-let g:airline#extensions#ale#enabled = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" Don't run linters on changing text or opening a file.
-" So effectively linters run only on file saved.
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-
-" let g:ale_completion_enabled = 0
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
 "}}}
 
 
@@ -505,39 +461,6 @@ let g:pasta_paste_before_mapping = ',O'
 let g:pasta_paste_after_mapping = ',o'
 "}}}
 
-" -----------------------------------------------------
-" Completion  roxma/nvim-completion-manager {{{
-" -----------------------------------------------------
-let g:cm_smart_enable=1  "disable ncm
-let g:cm_auto_popup = 0 "disable automatic popup
-
-"manually trigger autocompletion
-imap <silent> <Tab> <Plug>(cm_force_refresh)
-" imap <silent> <Tab> <c-r>=ManualCompletionTab()<cr>
-
-" Next two lines make it possible to expand a snippet (See Ultisnips config) from the pop up menu using ENTER
-
-" imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
-" imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-t>":"\<CR>")
-
-" imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "")
-" imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-t>":"")
-
-
-
-" override builtin completions
-" let g:cm_sources_enable = 0
-" let g:cm_sources_override = {
-" \ 'cm-tags': {'enable':0}
-" \ }
-"
-" increase for fast typing performance
-" let g:cm_complete_start_delay = 0
-" increase to minimize flickering of pop up menu
-" let g:cm_complete_popup_delay = 50
-
-"}}}
-"
 
 " -----------------------------------------------------
 " Smooth scroll vim-smooth-scroll {{{
@@ -617,14 +540,14 @@ inoremap <C-x><C-k> <NOP>
 let g:UltiSnipsExpandTrigger="<C-t>" " used to be tab, but reserved tab for completion manager
 let g:UltiSnipsListSnippets='<C-l>'
 let g:UltiSnipsEditSplit="vertical"
-set runtimepath+=~/.vimsnippets
+set runtimepath+= "C:\\Users\\spiros\\vimsnippets"
 " the following directories reside in .vimsnippets,
 " note that there's also a snipmate folder which is not compatible with
 " ultisnips, but some snippets work if a suffix is added with a  missing endsnippet.
 " you have to manually do that and move them to the folders below.
 let g:UltiSnipsSnippetDirectories=[ "ultisnips", "custom" ]
 "user defined snippets
-let g:UltiSnipsSnippetsDir= "~/.vimsnippets/custom"
+let g:UltiSnipsSnippetsDir= "C:\\Users\\spiros\\vimsnippets\\custom"
 let g:UltiSnipsUsePythonVersion=2
 let g:UltiSnipsJumpForwardTrigger='<leader>n'
 
@@ -641,8 +564,6 @@ let g:UltiSnipsJumpForwardTrigger='<leader>n'
 "}}}
 
 
-
-
 " -----------------------------------------------------
 " Vim Markdown settings {{{
 " -----------------------------------------------------
@@ -653,7 +574,7 @@ let g:vim_markdown_folding_disabled=1
 
 " Quiting and saving all
 cnoremap ww wqall
-cnoremap qq qall
+cnoremap qq qall!
 cnoremap <ESC><ESC> qall!<CR>
 
 "Delete Current File
@@ -678,11 +599,6 @@ sunmap e
 sunmap ge
 
 
-" nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<CR>
-" nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<CR>
-" nnoremap <silent> <C-Up> :resize +1<CR>
-" nnoremap <silent> <C-Down> :resize -1<CR>
-
 " Intelligent windows resizing using ctrl + arrow keys
 " Easier for Poker 3.
 nnoremap <silent> <Right> :call utils#intelligentVerticalResize('right')<CR>
@@ -692,7 +608,6 @@ nnoremap <silent> <Down> :resize -1<CR>
 
 " Quicker window movement
 nmap <silent> <C-w><C-w> :call utils#intelligentCycling()<CR>
-
 
 " Start search on current word under the cursor
 nnoremap ,/ /<CR>
@@ -817,7 +732,7 @@ augroup END
 "F1 Cannot be assigned for some reason in Ubuntu 16.04
 
 "F2 Source (reload configuration)
-nnoremap <silent> <F2> :so $HOME/_vimrc<CR>
+nnoremap <silent> <F2> :so $HOME\_vimrc<CR>
 
 "F4 Toggle white characters visibility
 nnoremap <silent> <F4> :set list!<CR> :set list?<CR>

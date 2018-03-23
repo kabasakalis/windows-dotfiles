@@ -1,6 +1,6 @@
 
 " ======================================================================================================================
-" Core settings, also used in Visual Studio  {{{
+" Core Vim settings, also used in Visual Studio  {{{
 " ======================================================================================================================
 
 let mapleader=" "                 " leader
@@ -15,12 +15,6 @@ set laststatus=2                  " Always display the status line
 set nostartofline                 " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block             " To be able to select past EOL in visual block mode
 set nojoinspaces                  " No extra space when joining a line which ends with . ? !
-" Save temporary/backup files not in the local directory, but in your ~/.vim
-" directory, to keep them out of git repos.
-" Pretty sure you need to mkdir backup, swap, and undo first to make this work
-" set backupdir=~/.config/nvim/backup//
-" set directory=~/.config/nvim/swap//
-" set undodir=~/.config/nvim/undo//
 
 "}}}
 
@@ -43,7 +37,6 @@ set incsearch                     " incremental searching
 
 " Save file
 nnoremap <Leader>s :w<CR>
-
 
 " Quicker window movement
 " up and down have been  mapped to tmux window navigation, not used in Windows.
@@ -170,6 +163,8 @@ nnoremap <CR> i<CR><Esc>
 " ======================================================================================================================
 " Visual Studio Commands {{{
 " ======================================================================================================================
+" Don't load these when using vim outside Visual Studio
+if !exists("g:windows_vim")
 
 " Switch to Solution Explorer
 nmap <leader><leader> :vsc View.SolutionExplorer<CR>
@@ -249,7 +244,5 @@ nmap <leader>n :vsc File.AddItem<CR>
 
 " Easy Motion
 " Shift+Control+;.
-
-" Context Menu: Shift + F10
-
+endif
 "}}}

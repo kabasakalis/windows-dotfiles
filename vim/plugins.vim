@@ -103,7 +103,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " deoplete autocomplete {{{
 " ---------------------------------------------------------------------------------------------------------------------
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 " Plug 'Valloric/YouCompleteMe'
 "}}}
 " ---------------------------------------------------------------------------------------------------------------------
