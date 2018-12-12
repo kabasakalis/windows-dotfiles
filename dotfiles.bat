@@ -5,6 +5,8 @@ SET WIN_DOTFILES_HOME=%userprofile%\windows_dotfiles
 SET UBUNTU_DOTFILES_HOME=%userprofile%\dotfiles
 SET VIM_HOME="C:\Program Files (x86)\Vim"
 SET VIM_RUNTIME="C:\Program Files (x86)\Vim\vim80"
+SET MSYS_ROOT="F:\msys64\mingw64"
+SET DROPBOX="F:\Dropbox"
 
 
 rem SET NEOVIM_RUNTIME="C:\Users\spiros\AppData\Local\nvim"
@@ -27,13 +29,14 @@ mklink /J %userprofile%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim
 rem JetBrains
 mklink  %userprofile%\.ideavimrc %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
 
-rem JetBrains
-mklink  F:\msys64\mingw64\bin\compile_commands_fix.sh %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
+rem ccls.exe Language Server Protocol for Spacevim C++ IDE features 
+mklink  %MSYS_ROOT%\bin\ccls.exe %DROPBOX%\dev\cpp\ccls.exe
 
-
+rem compile_commands_fix.sh
+mklink  %MSYS_ROOT%\bin\compile_commands_fix.sh %UBUNTU_DOTFILES_HOME%\spacevim\bin\compile_commands_fix.sh
 
 rem  useful executables
-mklink /J F:/tools   %WIN_DOTFILES_HOME%\tools
+mklink /J F:\tools   %WIN_DOTFILES_HOME%\tools
 
 
 rem Attempt for NeoVim  dotfiles, NeoVim sucks on Windows.
