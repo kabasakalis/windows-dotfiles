@@ -1,188 +1,0 @@
-
-debugreg.h
-kvm_para.h
-kvm_perf.h
-resource.h
-termbits.h
-ucontext.h
-vsyscall.hbootparam.hbyteorder.hmsr-index.hperf_regs.hunistd_32.hunistd_64.hptrace-abi.hsigcontext.hunistd_x32.hbitsperlong.hposix_types.hsigcontext32.hhw_breakpoint.hposix_types_32.hposix_types_64.hposix_types_x32.hprocessor-flags.hc++5extopt_random.hbits	gthr.h
-c++io.hextc++.hstdc++.hc++config.hc++locale.hstdtr1c++.hbasic_file.hctype_base.hgthr-posix.hopt_random.hos_defines.hatomic_word.hcpu_defines.hgthr-single.hc++allocator.hctype_inline.hgthr-default.htime_members.hcxxabi_tweaks.herror_constants.hmessages_members.h6extopt_random.hbits	gthr.h
-c++io.hextc++.hstdc++.hc++config.hc++locale.hstdtr1c++.hbasic_file.hctype_base.hgthr-posix.hopt_random.hos_defines.hatomic_word.hcpu_defines.hgthr-single.hc++allocator.hctype_inline.hgthr-default.htime_members.hcxxabi_tweaks.herror_constants.hmessages_members.h7extopt_random.hbits	gthr.h
-c++io.hextc++.hstdc++.hc++config.hc++locale.hstdtr1c++.hbasic_file.hctype_base.hgthr-posix.hopt_random.hos_defines.hatomic_word.hcpu_defines.hgthr-single.hc++allocator.hctype_inline.hgthr-default.htime_members.hcxxabi_tweaks.herror_constants.hmessages_members.h8extopt_random.hbits	gthr.h
-c++io.hextc++.hstdc++.hc++config.hc++locale.hstdtr1c++.hbasic_file.hctype_base.hgthr-posix.hopt_random.hos_defines.hatomic_word.hcpu_defines.hgthr-single.hc++allocator.hctype_inline.hgthr-default.htime_members.hcxxabi_tweaks.herror_constants.hmessages_members.h5.5.06.4.07.3.0gnu
-stubs.h
-stubs-64.hlib-names.hlib-names-64.hlibc-version.hsysio.hkd.hun.hvt.hdir.helf.hipc.hmsg.hpci.hraw.hreg.hsem.hshm.huio.hvfs.h	acct.h	auxv.h	file.h	gmon.h	klog.h	mman.h	mtio.h	perm.h	poll.h	stat.h	swap.h	time.h	user.h	vm86.h	wait.h
-cdefs.h
-epoll.h
-errno.h
-fcntl.h
-fsuid.h
-ioctl.h
-mount.h
-param.h
-prctl.h
-queue.h
-quota.h
-timeb.h
-times.h
-timex.h
-types.h
-ustat.h
-xattr.hprocfs.hprofil.hptrace.hreboot.hselect.hsignal.hsocket.hstatfs.hsysctl.hsyslog.hunistd.hvlimit.hvtimes.h	bitypes.h	eventfd.h	inotify.h	statvfs.h	stropts.h	syscall.h	sysinfo.h	termios.h	timerfd.h	utsname.h
-debugreg.h
-fanotify.h
-gmon_out.h
-resource.h
-sendfile.h
-signalfd.h
-ttychars.h
-ucontext.hsocketvar.hsoundcard.hsysmacros.hultrasound.hpersonality.httydefaults.hbitsin.hinf.hipc.hmsq.hnan.hsem.hshm.huio.h	auxv.h	fenv.h	link.h	mman.h	poll.h	stat.h	time.h	utmp.h
-a.out.h
-dlfcn.h
-epoll.h
-errno.h
-error.h
-fcntl.h
-hwcap.h
-netdb.h
-param.h
-poll2.h
-sched.h
-stdio.h
-timex.h
-types.h
-ustat.h
-utmpx.h
-wchar.hdirent.hendian.hfcntl2.hioctls.hlocale.hmqueue.hselect.hsetjmp.hsignum.hsigset.hsocket.hstab.defstatfs.hstdio2.hstdlib.hstring.hsysctl.hsyslog.hunistd.hwchar2.h	eventfd.h	inotify.h	mathdef.h	mqueue2.h	select2.h	setjmp2.h	siginfo.h	socket2.h	statvfs.h	string2.h	string3.h	stropts.h	syscall.h	termios.h	timerfd.h	utsname.h
-byteswap.h
-confname.h
-elfclass.h
-huge_val.h
-initspin.h
-ipctypes.h
-resource.h
-signalfd.h
-sigstack.h
-sockaddr.h
-wordsize.h
-xtitypes.hhuge_valf.hhuge_vall.hlocal_lim.hmathcalls.hposix_opt.hsemaphore.hsigaction.hsigthread.hstdio_lim.htypesizes.hwaitflags.hxopen_lim.hcmathcalls.hfenvinline.hlibio-ldbl.hmathinline.hmman-linux.hposix1_lim.hposix2_lim.hsigcontext.hstdio-ldbl.hwaitstatus.hwchar-ldbl.hbyteswap-16.hfcntl-linux.hioctl-types.hmath-finite.hmath-vector.hprintf-ldbl.hsocket_type.hstdlib-ldbl.hsys_errlist.hsyslog-ldbl.hsyslog-path.henvironments.hpthreadtypes.hstdlib-float.hmonetary-ldbl.hstdlib-bsearch.hlibm-simd-decl-stubs.hffi.h
-a.out.h
-opensslopensslconf.h	ieee754.h	python2.7
-pyconfig.h
-python3.5m
-pyconfig.hffitarget.hfpu_control.hexpat_config.hmain.cppGame.cppmain.cppGame.cpp
-Stipple	xt_DSCP.hxt_RATEEST.hxt_TCPMSS.h	xt_MARK.h	ipt_TTL.h	ipt_ECN.hxt_CONNMARK.h	ip6t_HL.hxt_TCPMSS.h	xt_MARK.h	ipt_TTL.h	ipt_ECN.h
-Stipple	xt_DSCP.hxt_CONNMARK.h	ip6t_HL.hxt_RATEEST.hmain.cppGame.cppCollision.cppCollision.h	Game.hmain.cppGame.cppCollision.cppCollision.h	Game.hSocketSelector.hppTcpSocket.hppTcpListener.hpp
-Export.hppHttp.hpp
-Ftp.hppUdpSocket.hppVertexArray.hppRenderTexture.hppTransformable.hppConvexShape.hpp	Color.hppPrimitiveType.hppRectangleShape.hpp	Shape.hpp
-Sprite.hppRenderTarget.hppCircleShape.hppRect.hppRect.inlDrawable.hpp
-Shader.hppView.hppText.hpp
-Vertex.hppTexture.hpp
-Export.hppRenderWindow.hppBlendMode.hpp	Glyph.hpp	Image.hppRenderStates.hppFont.hppTransform.hppintel_aub.hnouveau_drm.hintel_bufmgr.hmach64_drm.h
-nouveauvirtgpu_drm.h	qxl_drm.hradeon_surface.hsavage_drm.hr600_pci_ids.hvmwgfx_drm.hradeon_bo.hradeon_bo_gem.hradeon_bo_int.h
-i915_drm.h	via_drm.hintel_debug.h
-r128_drm.htegra_drm.h	mga_drm.hdrm_fourcc.hdrm.h	sis_drm.hamdgpu.hradeon_cs_gem.hradeon_cs_int.hradeon_cs.hamdgpu_drm.h	vc4_drm.h
-drm_mode.hdrm_sarea.hradeon_drm.hnvif	nouveau.hcl9097.hif0003.h
-class.hif0002.hcl0080.hunpack.h
-ioctl.hglcorearb.h
-glext.h
-glxproto.hinternalglxint.hglxtokens.hgl_mangle.hgl.hglxext.hglx.hglx_mangle.h
-glxmd.hglcore.hdri_interface.hSFML	libdrmxf86drmMode.h	libsync.hGL	xf86drm.h	sync.h
-randr.h	present.hxfixes.hglx.h
-shape.hrender.h	dri2.h	dri3.hxshmfence.h
-Xlib-xcb.h	Xdamage.hxf86vmode.hdamageproto.hdri2proto.hxf86vmstr.hxf86vm.hxf86vmproto.hdri2tokens.hdamagewire.h	WindowGraphics.hppNetwork.hpp
-OpenGL.hpp	Audio.hpp
-Config.hpp	System
-Window.hppGraphics
-NetworkMain.hpp
-System.hppAudioInputSoundFile.hppListener.hppSoundStream.hppOutputSoundFile.hppSoundFileFactory.inl	Sound.hppSoundFileFactory.hppSoundBuffer.hppSoundRecorder.hppAlResource.hppSoundBufferRecorder.hpp
-Export.hppSoundFileReader.hpp	Music.hppSoundFileWriter.hppSoundSource.hpp	Mutex.hppFileInputStream.hppInputStream.hppMemoryInputStream.hpp
-Err.hpp	Clock.hppNonCopyable.hppTime.hppLock.hpp
-String.hpp
-Utf.hpp
-String.inl
-Utf.inlThreadLocalPtr.inlThreadLocalPtr.hppVector3.hppVector3.inlVector2.inlVector2.hpp	Sleep.hppThreadLocal.hpp
-Export.hpp
-Thread.hpp
-Thread.inlContextSettings.hppWindowHandle.hppKeyboard.hpp	Mouse.hppVideoMode.hppJoystick.hpp
-Window.hpp
-Sensor.hpp	Event.hpp
-Export.hpp	Touch.hppGlResource.hppWindowStyle.hpp
-Socket.hppContext.hppSocketHandle.hpp
-Packet.hppIpAddress.hppmain.cppGame.cppmain.cppGame.cppRect.hpp
-stl_tree.hMakefilefrogger_sfml.cbpCMakeCache.txtcmake_install.cmakemain.cppGame.cppCollision.cppCollision.h	Game.hCollision.cppRect.hpp
-stl_tree.hmain.cppGame.cppCollision.cppCollision.h	Game.hclion-log.txtmain.cppGame.cppCollision.cpp	Game.hCollision.cppmain.cppGame.cppCollision.cpp	Game.hMakefilefrogger_sfml.cbpCMakeCache.txtcmake_install.cmakeCollision.cppCollision.cppCollision.cppCollision.cppCollision.cppCollision.cppCollision.cppCollision.cppCollision.cppfrogger_sfmlMakefilefrogger_sfml.cbpCMakeCache.txtCollision.cppcmake_install.cmakeCollision.cppCollision.cppfrogger_sfmlmain.cppGame.cppCollision.cpp	Game.hMakefilefrogger_sfml.cbpcmake_install.cmakeCMakeCache.txtGame.cppCollision.cppmain.cppGame.cppCollision.cpp	Game.hroboworkerssrctaskslift.cppmove.cpptask.cpppackage.cppputdown.cpppackager.cppmain.cppproductssofa.cpp	chair.cppproduct.cpp
-operationsoperation.cpprequest.cppwarehouse.cppbackoffice.cpproboworker.cpp.ideac40d3819
-vcs.xmlmisc.xml
-codeStylesProject.xmlcodeStyleConfig.xmlmodules.xmldictionaries
-spiros.xmlworkspace.xmlroboworkers.iml
-includedatetz.hios.hptz.h	date.hjulian.h	islamic.h
-iso_week.hchrono_io.htz_private.htasks	lift.h	move.h	task.h	package.h	putdown.h
-packager.hproducts	sofa.h
-chair.h	product.h	request.h	utilitiesutilities.hidentifiable.htimestampable.h
-operationsoperation.hwarehouse.hbackoffice.hroboworker.h
-LICENSEdata.txt	data2.txt	README.md
-.gitignoreCMakeLists.txtroboworkers.jpgsample_input.txtsample_output.txtconsole_showcase.png-*-lpthread -lboost_thread -lboost_system-mtMakefile
-CMakeFiles	3.10.3CompilerIdCa.outCMakeCCompilerId.cCompilerIdCXXa.outCMakeCXXCompilerId.cppCMakeSystem.cmakeCMakeCCompiler.cmakeCMakeCXXCompiler.cmake"CMakeDetermineCompilerABI_C.bin$!CMakeDetermineCompilerABI_CXX.binProgress14	count.txt	Makefile2clion-log.txtCMakeError.logMakefile.cmakeprogress.marksCMakeOutput.logfeature_tests.croboworkers.dirsrc
-lift.cpp.o
-main.cpp.o
-move.cpp.o
-task.cpp.opackage.cpp.oproduct.cpp.oputdown.cpp.ooperation.cpp.owarehouse.cpp.obackoffice.cpp.oroboworker.cpp.oidentifiable.cpp.orequest_blocking_queue.cpp.olink.txt
-build.make
-flags.makedepend.makeprogress.makedepend.internalCXX.includecacheDependInfo.cmakecmake_clean.cmakecmake.check_cachefeature_tests.binfeature_tests.cxxclion-environment.txtTargetDirectories.txt"CMakeDirectoryInformation.cmakeCMakeCache.txtroboworkers.cbpcmake_install.cmakeCMakeError.logclion-log.txtwarehouse.cppbackoffice.cppwarehouse.cppbackoffice.cppGame.cpp5316c981Game.cppworkspace.xmlpseuthedemo.imlmisc.xmlmodules.xmlpseuthedemosrc
-App.cppmain.cpp	Music.cpp	Scene.cpp	Score.cpp	State.cpp
-Entity.cpp
-Ticker.cppUIButton.cppUISlider.cppAffectors.cppComponent.cppGameState.cppHelpState.cppMenuState.cppPostBloom.cppUIControl.cppUITextBox.cppFileSystem.cppMessageBus.cppScoreState.cppStateStack.cppTitleState.cppUICheckBox.cppUIComboBox.cppPostProcess.cppSoundPlayer.cppUIContainer.cppUIScoreList.cppUISelection.cppAudioManager.cppEchoDrawable.cppFadeDrawable.cppFontResource.cppPhysicsWorld.cppPostChromeAb.cppec1ef26fTailDrawable.cppTextDrawable.cppLightPosition.cppOrbController.cppParticleField.cppCircleDrawable.cppGameController.cppInputComponent.cppParticleSystem.cppShaderResource.cppCausticDrawable.cppParticleFactory.cppAnimatedDrawable.cppGradientDrawable.cppPhysicsComponent.cppPhysicsConstraint.cppBodypartController.cppPlanktonController.cppTailDrawablePhysics.cpp.ideacmake
-modulesFindSFML.cmake	assetsfonts	N_E_B.ttf
-Ardeco.ttfVeraMono.ttfVeraMono.txtsoundchimes01	01.wav	02.wav	03.wav	04.wav	05.wav	06.wav	07.wav	08.wav
-nomnom.wav
-switch.wavstartup.wavjelly_eat.wavbackground.ogghealthlost.wavhealthgained.wavplayer_spawn.wav	imagesui	close.png
-button.png
-cursor.pngtextbox.pngcheckbox.pngcombobox.pngscroll_arrow.pngstart_button.pngslider_handle.pngscroll_arrow_vertical.png	playerhead.crahead.png	bonus.cra	bonus.png	mouth.cra	mouth.png
-food01.cra
-food01.png
-food02.cra
-food02.png
-food03.cra
-food03.pngwiggler.crawiggler.pngbodypart01.crabodypart01.png	particles	balls.cra	balls.png	field.png	ident.png	spark.png	white.png
-circle.pngball_normal.pngball_normal_animated.pngstartup.pngvignette.pnghelp_menu.pngmain_menu.png
-extlibssfmlopenal32.dllsfml-main.libsfml-audio.libsfml-main-d.libsfml-system.libsfml-window.libsfml-audio-2.dllsfml-audio-d.libsfml-graphics.libsfml-system-2.dllsfml-system-d.libsfml-window-2.dllsfml-window-d.libsfml-audio-d-2.dllsfml-graphics-2.dllsfml-graphics-d.libsfml-system-d-2.dllsfml-window-d-2.dllsfml-graphics-d-2.dll
-icon.rc
-includeSFMLAudio	Music.hpp	Sound.hpp
-Export.hppListener.hppAlResource.hppSoundBuffer.hppSoundSource.hppSoundStream.hppSoundRecorder.hppInputSoundFile.hppOutputSoundFile.hppSoundFileReader.hppSoundFileWriter.hppSoundFileFactory.hppSoundFileFactory.inlSoundBufferRecorder.hpp	System
-Err.hpp
-Utf.hpp
-Utf.inlLock.hppTime.hpp	Clock.hpp	Mutex.hpp	Sleep.hpp
-Export.hpp
-String.hpp
-String.inl
-Thread.hpp
-Thread.inlVector2.hppVector2.inlVector3.hppVector3.inlInputStream.hppNonCopyable.hppThreadLocal.hppThreadLocalPtr.hppThreadLocalPtr.inlFileInputStream.hppMemoryInputStream.hpp	Window	Event.hpp	Mouse.hpp	Touch.hpp
-Export.hpp
-Sensor.hpp
-Window.hppContext.hppJoystick.hppKeyboard.hppVideoMode.hppGlResource.hppWindowStyle.hppWindowHandle.hppContextSettings.hpp
-Network
-Ftp.hppHttp.hpp
-Export.hpp
-Packet.hpp
-Socket.hppIpAddress.hppTcpSocket.hppUdpSocket.hppTcpListener.hppSocketHandle.hppSocketSelector.hppGraphicsFont.hppRect.hppRect.inlText.hppView.hpp	Color.hpp	Glyph.hpp	Image.hpp	Shape.hpp
-Export.hpp
-Shader.hpp
-Sprite.hpp
-Vertex.hppTexture.hppDrawable.hppBlendMode.hppTransform.hppCircleShape.hppConvexShape.hppVertexArray.hppRenderStates.hppRenderTarget.hppRenderWindow.hppPrimitiveType.hppRenderTexture.hppTransformable.hppRectangleShape.hppMain.hpp	Audio.hpp
-Config.hpp
-OpenGL.hpp
-System.hpp
-Window.hppNetwork.hppGraphics.hpp
-App.hpp
-Log.hppIcon.hppUtil.hpp	Music.hpp	Scene.hpp	Score.hpp	State.hpp
-Entity.hpp
-picojson.h
-Ticker.hppShaders.hppJsonUtil.hppParticle.hppResource.hppStateIds.hppUIButton.hppUISlider.hppAffectors.hppComponent.hppGameState.hppHelpState.hppMenuState.hppPostBloom.hppUIControl.hppUITextBox.hppFileSystem.hppMakeUnique.hppMessageBus.hppScoreState.hppStateStack.hppTitleState.hppUICheckBox.hppUIComboBox.hppPostProcess.hppSoundPlayer.hppUIContainer.hppUIScoreList.hppUISelection.hppAudioManager.hppEchoDrawable.hppFadeDrawable.hppPhysicsWorld.hpppicojson.LICENSEPostChromeAb.hppTailDrawable.hppTextDrawable.hppLightPosition.hppOrbController.hppParticleField.hppCircleDrawable.hppGameController.hppInputComponent.hppParticleSystem.hppShaderResource.hppCausticDrawable.hppAnimatedDrawable.hppGradientDrawable.hppPhysicsComponent.hppBodypartController.hppPlanktonController.hpp
-resource.hResource.rcResource.apsCMakeLists.txtpseuthe.vcxprojResourcePath.mmpseuthe_icon.icoResourcePath.hppPseuthe-Info.plistpseuthe.vcxproj.filtersPseuthe_OSX_Icon.iconseticon_16x16.pngicon_32x32.pngicon_128x128.pngicon_256x256.pngicon_512x512.png
-codeStylesProject.xml.nameworkspace.xmlBreakout.imlmisc.xmlmodules.xmlBreakoutsrc38b11ae1	ball.h
-brick.hball.cppmain.cpppaddle.h	brick.cpp	defines.h
-paddle.cppCMakeLists.txt.idea	README.mdcmake_modulesFindSFML.cmakeCMakeLists.txt
-vcs.xml
-codeStylesProject.xml.namedictionaries
-spiros.xmlCMakeCache.txtclion-log.txtvcpkg.config.cmakeclion-log.txtMakefile.cmakeprogress.marks	Makefile2TargetDirectories.txt"CMakeDirectoryInformation.cmakemain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppball.cpp	defines.hpaddle.h	ball.hmain.cppmain.cppbreakout.cbp	ball.hMakefilemain.cppball.cppCMakeCache.txt	defines.hcmake_install.cmakepaddle.hmain.cppmain.cpp
