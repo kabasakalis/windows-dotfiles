@@ -2,6 +2,7 @@ rem Run this batch file as Administrator to create the symbolic links
 
 rem Make sure the paths below are correct.
 SET WIN_DOTFILES_HOME=%userprofile%\windows_dotfiles
+SET UBUNTU_DOTFILES_HOME=%userprofile%\dotfiles
 SET VIM_HOME="C:\Program Files (x86)\Vim"
 SET VIM_RUNTIME="C:\Program Files (x86)\Vim\vim80"
 
@@ -20,7 +21,22 @@ mklink  %VIM_RUNTIME%\autoload\utils.vim  %WIN_DOTFILES_HOME%\vim\autoload\utils
 mklink  %VIM_RUNTIME%\colors\Tomorrow-Night.vim  %WIN_DOTFILES_HOME%\vim\color\Tomorrow-Night.vim
 
 
-rem Attempt form NeoVim  dotfiles, NeoVim sucks on Windows.
+rem SPACEVIM dotfiles
+mklink /J %userprofile%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim
+
+rem JetBrains
+mklink  %userprofile%\.ideavimrc %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
+
+rem JetBrains
+mklink  F:\msys64\mingw64\bin\compile_commands_fix.sh %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
+
+
+
+rem  useful executables
+mklink /J F:/tools   %WIN_DOTFILES_HOME%\tools
+
+
+rem Attempt for NeoVim  dotfiles, NeoVim sucks on Windows.
 rem mklink  %NEOVIM_RUNTIME%\init.vim  %DOTFILES_HOME%\neovim\init.vim
 rem mklink  %NEOVIM_RUNTIME%\plugins.vim  %DOTFILES_HOME%\neovim\plugins.vim
 rem mklink /J  %NEOVIM_RUNTIME%\autoload  %DOTFILES_HOME%\neovim\autoload

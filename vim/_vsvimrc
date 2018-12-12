@@ -2,8 +2,7 @@
 " ======================================================================================================================
 " Core Vim settings, also used in Visual Studio  {{{
 " ======================================================================================================================
-
-let mapleader=" "                 " leader
+let mapleader=" "      " leader
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -18,7 +17,7 @@ set nojoinspaces                  " No extra space when joining a line which end
 
 "}}}
 
-
+dssds
 " ---------------------------------------------------------------------------------------------------------------------
 " Search settings {{{
 " ---------------------------------------------------------------------------------------------------------------------
@@ -80,7 +79,6 @@ nmap <Leader>v <esc>ggVG<CR>
 vnoremap y y`]
 vnoremap p "_dP`]
 nnoremap p p`]
-
 " Yank and paste from clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y

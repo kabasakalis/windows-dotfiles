@@ -8,9 +8,9 @@
 
 extends c
 
-global !p
-from snippet_helpers import *
-endglobal
+# global !p
+# from snippet_helpers import *
+# endglobal
 
 snippet incc
 	#include <${1:iostream}>
@@ -145,7 +145,7 @@ ${1:ReturnType} ${2:FunctionName}(${3:param})
 endsnippet
 
 # namespace
-snippet ns
+snippet nss
 	namespace ${1:`vim_snippets#Filename('', 'my')`} {
 		${0}
 	} /* namespace $1 */

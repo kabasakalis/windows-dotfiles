@@ -1,0 +1,5 @@
+CVS
+PerforceDirectPlugin
+Subversion
+TFS
+hg4idea
