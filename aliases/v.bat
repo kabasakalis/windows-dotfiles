@@ -1,2 +1,2 @@
 @echo off
-call gvim .
+call start /b gvim . & dir /w

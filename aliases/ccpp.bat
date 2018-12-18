@@ -1,2 +1,2 @@
 @echo off
-call cd %USERPROFILE%\cpp
+call cd %USERPROFILE%\cpp & dir /w

@@ -1,2 +1,2 @@
 @echo off
-call cd %USERPROFILE% 
+call cd %USERPROFILE%  & dir /w
