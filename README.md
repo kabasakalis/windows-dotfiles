@@ -27,13 +27,13 @@ some dotfiles are the same for both windows and linux.
 * Verify and tweak the (default) installation paths in `dotfiles.bat`
 
 ### Neovim
-* Download and install From [Neovim releases]( https://github.com/neovim/neovim/releases/)
+* Download and install from [Neovim releases]( https://github.com/neovim/neovim/releases/)
 * Install python 2 and 3 in your system from python [downloads](https://www.python.org/downloads/windows/),
  and set the paths accordingly either in `dotfiles/neovim/init.vim` if you use neovim without spacevim,
- or in `dotfiles/spacevim/autoload/config_before.vim` if you use it with spacevim. Also add system environmental
- variables, executable for python3j
+ or in `dotfiles/spacevim/autoload/config_before.vim` if you use it with spacevim. Also add to system path executable for python3 only and 
+executable for both `pip2` and `pip2` executables.
 * Install [nodejs](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable) 
-* Install `coc-vim` extensions for language support with Language Server Protocol. In neovim command line
+* Install `coc-vim` extensions for language support with Language Server Protocol. In neovim command line,
 install extensions for languages of interest. Example: `:CocInstall coc-java`, for java. See [coc.vim](https://github.com/neoclide/coc.nvim)
 for details. See `dotfiles/spacevim/plugin/coc.vim` for details on how to update coc.vim.
 * Run `checkhealth` in neovim command line to ensure that requirements are met, and follow suggestions to fix problems.
@@ -43,6 +43,8 @@ for details. See `dotfiles/spacevim/plugin/coc.vim` for details on how to update
 ### SpaceVim
 * Read about [Spacevim](https://github.com/SpaceVim/SpaceVim)
 * The easiest way to install is to download [install.cmd](https://spacevim.org/install.cmd) and run it as administrator, or install SpaceVim manually.
+* It's Important to realize that the Neovim runtime is symlinked to spacevim installation folder. Essentially Spacevim
+hijacks Neovim or (GVim). See `dotfiles.bat` for details. 
 
 ### Visual Studio
 The `vs` folder contains exported settings for Visual Studio.
