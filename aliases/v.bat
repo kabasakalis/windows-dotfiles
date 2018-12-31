@@ -1,2 +1,2 @@
 @echo off
-call start /b gvim . & dir /w
+call start /b nvim-qt . & dir /w
