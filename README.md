@@ -4,7 +4,7 @@
 
 > Dotfiles for my Windows development environment. For C++ development and Java.
 
-###### Screenshot from Graphical Neovim (Qt) :
+###### Screenshot from Graphical Neovim (Qt) with Spacevim and deep-space color theme :
 ![Neovim screenshot](https://raw.githubusercontent.com/kabasakalis/windows-dotfiles/master/screenshot.png)
 
 ## Features
