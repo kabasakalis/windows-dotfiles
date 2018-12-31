@@ -45,6 +45,11 @@ rem ---------------------------------- Aliases (add this in system Path)--------
 mklink /J %userprofile%\aliases %WIN_DOTFILES_HOME%\aliases
 
 
+
+rem ---------------------------------- Git Config (add this in system Path)------------------------------------------------=
+mklink  %userprofile%\.gitconfig %UBUNTU_DOTFILES_HOME%\git\gitconfig
+mklink  %userprofile%\.gitignore_global %UBUNTU_DOTFILES_HOME%\git\gitignore_global
+
 rem ---------------------------------- Tools, mostly for C++ for now ---------------------------------------------------
 rem ccls.exe Language Server Protocol for Spacevim C++ IDE features 
 rem mklink  %MSYS_ROOT%\bin\ccls.exe %DROPBOX%\dev\cpp\ccls.exe
