@@ -1,0 +1,41 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+  GRADLE_HOME=F:\\gradle-4.10.3
+  JAVA_HOME=C:\\jdk-8
+  PYTHON3_HOME=C:\\python\37
+  PYTHON2_HOME=C:\\python\27
+  MAVEN_HOME=C:\\maven-3.6.0
+  WIN_DOTFILES_HOME=%userprofile%\windows_dotfiles
+  UBUNTU_DOTFILES_HOME=%userprofile%\dotfiles
+  NEOVIM_HOME=%userprofile%\AppData\Local\nvim
+  SPACEVIM_HOME=%userprofile%\.SpaceVim
+  SPACEVIM_USER_HOME=%userprofile%\.SpaceVim.d
+  DROPBOX="C:\Dropbox"
+
+  VIM_HOME="C:\Program Files\Vim"
+  VIMFILES=%VIM_HOME%\vimfiles
+  VIM_RUNTIME=%VIMHOME%\vim80
+
+  "Path"=
+  C:\Program Files\Git\cmd;
+  C:\tools;
+  C:\Program Files\Vim\vim81;
+  C:\%userprofile%\aliases;
+  C:\Programs\node;
+  C:\Programs\yarn\bin\;
+  C:\Programs\nvim\bin;
+  %GRADLE_HOME%\bin;
+  %JAVA_HOME%\bin;
+  %MAVEN_HOME%\bin;
+  %PYTHON3_HOME%
+  %PYTHON3_HOME%\Scripts
+  %PYTHON3_HOME%\Lib\site-packages
+  %PYTHON2_HOME%\Scripts
+  C:\Programs\7-zip;
+  C:\\Programs\\Python\\37\\Scripts\\;
+  C:\\Programs\\Python\\37\\;
+  C:\\Users\\spiros\\AppData\\Local\\Yarn\\bin;
+  C:\\Programs\\Python\\27\\Scripts\\;"
+  %SPACEVIM_USER_HOME%\\bin
+  %userprofile%\aliases 
