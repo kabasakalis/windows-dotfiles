@@ -2,7 +2,7 @@
 
 ## Introduction
 
-> Dotfiles for my Windows development environment. For C++ development and Java.
+> Dotfiles for my Windows development environment. C++ and Java.
 ## LSP language support for Neovim.
 IDE features with [coc.vim](https://github.com/neoclide/coc.nvim)
         
