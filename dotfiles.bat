@@ -18,7 +18,8 @@ SET VIM_RUNTIME=%VIMHOME%\vim80
 rem tools
 SET MSYS_ROOT="F:\msys64\mingw64"
 SET DROPBOX="F:\Dropbox"
-
+rem ConEmu
+SET CONEMU_HOME="F:\Programs\conemu"
 
 rem ---------------------------------- Neovim with Spavevim ----------------------------------------------
 
@@ -44,9 +45,15 @@ mklink  %userprofile%\.ideavimrc %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
 rem ---------------------------------- Aliases (add this in system Path)------------------------------------------------=
 mklink /J %userprofile%\aliases %WIN_DOTFILES_HOME%\aliases
 
+rem ---------------------------------- ConEmu settings -----------------------------------------------------------------
+mklink  %CONEMU_HOME%\ConEmu.xml    %WIN_DOTFILES_HOME%\config\conemu.xml 
 
 
-rem ---------------------------------- Git Config (add this in system Path)------------------------------------------------=
+rem ---------------------------------- ConEmu settings -----------------------------------------------------------------
+mklink  %CONEMU_HOME%\ConEmu.xml    %WIN_DOTFILES_HOME%\config\conemu.xml 
+
+
+rem ---------------------------------- Git Config (add this in system Path)---------------------------------------------
 mklink  %userprofile%\.gitconfig %UBUNTU_DOTFILES_HOME%\git\gitconfig
 mklink  %userprofile%\.gitignore_global %UBUNTU_DOTFILES_HOME%\git\gitignore_global
 
