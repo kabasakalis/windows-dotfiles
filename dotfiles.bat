@@ -20,8 +20,18 @@ SET MSYS_ROOT="F:\msys64\mingw64"
 SET DROPBOX="F:\Dropbox"
 rem ConEmu
 SET CONEMU_HOME="F:\Programs\conemu"
+rem Visual Studio Code
+SET VSSTUDIO_USER="%userprofile%\AppData\Roaming\Code\User"
 
-rem ---------------------------------- Neovim with Spavevim ----------------------------------------------
+
+rem ---------------------------------- Visual Studio  User Settings ----------------------------------------------------
+
+mklink %VSSTUDIO_USER%\keybindings.json %UBUNTU_DOTFILES_HOME%\vscode\keybindings.json
+mklink %VSSTUDIO_USER%\settings.json %UBUNTU_DOTFILES_HOME%\vscode\settings.json
+mklink /J %VSSTUDIO_USER%\snippets %UBUNTU_DOTFILES_HOME%\vscode\snippets
+
+
+rem ---------------------------------- Neovim with Spavevim ------------------------------------------------------------
 
 rem SPACEVIM dotfiles
 mklink /J %userprofile%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim

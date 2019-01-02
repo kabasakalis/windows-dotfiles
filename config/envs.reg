@@ -13,6 +13,7 @@ Windows Registry Editor Version 5.00
   SPACEVIM_USER_HOME=%userprofile%\.SpaceVim.d
   DROPBOX="C:\Dropbox"
   CONEMU_HOME="F:\Programs\conemu"
+  VSSTUDIO_USER="%userprofile%\AppData\Roaming\Code\User"
 
   VIM_HOME="C:\Program Files\Vim"
   VIMFILES=%VIM_HOME%\vimfiles
