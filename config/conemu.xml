@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-01-02 01:03:18" build="180626">
+		<key name=".Vanilla" modified="2019-01-02 08:53:52" build="180626">
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
 			<value name="StartTasksFile" type="string" data=""/>
@@ -837,13 +837,13 @@
 			<value name="Language" type="string" data="en"/>
 			<value name="RestoreInactive" type="hex" data="00"/>
 			<value name="CmdLineHistory" type="multi">
+				<line data="{windot}"/>
 				<line data="{START}"/>
 				<line data="{dot}"/>
 				<line data="{grid3}"/>
 				<line data="{dot2}"/>
 				<line data="{grid4}"/>
 				<line data="{CMD}"/>
-				<line data="{windot}"/>
 				<line data="{Group19}"/>
 				<line data="{Group16}"/>
 				<line data="{Vim Template}"/>
