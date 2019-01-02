@@ -1,2 +1,2 @@
 @echo off
-call git clone
+call git clone %1
