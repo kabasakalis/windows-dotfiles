@@ -8,9 +8,10 @@ rem https://github.com/kabasakalis/windows-dotfiles
 
 rem Make sure the paths below are correct.
 rem Neovim with Spacevim
-SET WIN_DOTFILES_HOME=%userprofile%\windows_dotfiles
-SET UBUNTU_DOTFILES_HOME=%userprofile%\dotfiles
-SET NEOVIM_RUNTIME=%userprofile%\AppData\Local\nvim-data
+SET HOME =C:\Users\s.kabasakalis
+SET WIN_DOTFILES_HOME=%HOME%\windows_dotfiles
+SET UBUNTU_DOTFILES_HOME=%HOME%\dotfiles
+SET NEOVIM_RUNTIME=C:\dev\neovim\share\nvim\runtime
 rem Gvim 
 SET VIM_HOME="C:\Program Files\Vim"
 SET VIMFILES=%VIM_HOME%\vimfiles
@@ -21,7 +22,7 @@ SET DROPBOX="F:\Dropbox"
 rem ConEmu
 SET CONEMU_HOME=%CONEMU_HOME%
 rem Visual Studio Code
-SET VSSTUDIO_USER="%userprofile%\AppData\Roaming\Code\User"
+SET VSSTUDIO_USER="%HOME%\AppData\Roaming\Code\User"
 
 
 rem ---------------------------------- Visual Studio  User Settings ----------------------------------------------------
@@ -34,10 +35,10 @@ rem mklink /J %VSSTUDIO_USER%\snippets %UBUNTU_DOTFILES_HOME%\vscode\snippets
 rem ---------------------------------- Neovim with Spavevim ------------------------------------------------------------
 
 rem SPACEVIM dotfiles
-mklink /J %userprofile%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim
+mklink /J %HOME%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim
 
 rem SPACEVIM neovim Sym link Neovim Runtime to Spacevim
-mklink /J %NEOVIM_RUNTIME% %userprofile%\.SpaceVim
+mklink /J %NEOVIM_RUNTIME% %HOME%\.SpaceVim
 
 rem coc.vim settings (Language Server Protocol client for vim)  for Neovim.
 rem  Note: You must have downloaded Spavevim repo in home folder before you run this command.
@@ -49,7 +50,7 @@ mklink  %NEOVIM_RUNTIME%\coc-settings.json %UBUNTU_DOTFILES_HOME%\spacevim\confi
 rem ---------------------------------- IntelliJ IDEA settings ----------------------------------------------------------
 
 rem JetBrains
-mklink  %userprofile%\.ideavimrc %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
+mklink  %HOME%\.ideavimrc %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
 
 
 rem ---------------------------------- Aliases (add this in system Path)------------------------------------------------=
@@ -64,8 +65,8 @@ rem mklink  %CONEMU_HOME%\ConEmu.xml    %WIN_DOTFILES_HOME%\config\conemu.xml
 
 
 rem ---------------------------------- Git Config (add this in system Path)---------------------------------------------
-mklink  %userprofile%\.gitconfig %UBUNTU_DOTFILES_HOME%\git\gitconfig
-mklink  %userprofile%\.gitignore_global %UBUNTU_DOTFILES_HOME%\git\gitignore_global
+mklink  %HOME%\.gitconfig %UBUNTU_DOTFILES_HOME%\git\gitconfig
+mklink  %HOME%\.gitignore_global %UBUNTU_DOTFILES_HOME%\git\gitignore_global
 
 rem ---------------------------------- Tools, mostly for C++ for now ---------------------------------------------------
 rem ccls.exe Language Server Protocol for Spacevim C++ IDE features 

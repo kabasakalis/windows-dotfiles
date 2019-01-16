@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mvn clean install -DskipTests",
+            "type": "shell",
+            "command": "mvn clean install -DskipTests",
+            "group": "build"
+        },
+        {
+            "label": "mvn install -DskipTests",
+            "type": "shell",
+            "command": "mvn install -DskipTests",
+            "group": "build"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "mvn -B test",
+            "group": "test"
+        },
+        {
+            "label": "runTCP",
+            "type": "shell",
+            "command": "mvn  -Dexec.args=\"-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9011 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dfile.encoding=iso8859-7 -Dprops.path='c:\\Users\\s.kabasakalis\\projects\\crs-engine\\crs-tcp-core\target\\conf\\' -classpath %classpath gr.forthcrs.crs.tcp.core.main.Main\"  -Dexec.executable=java  process-classes org.codehaus.mojo:exec-maven-plugin:1.2.1:exec",
+            "group": "none"
+        },
+        {
+            "label": "killTCP",
+            "type": "shell",
+            "command": "tcpkill",
+            "group": "none"
+        },
+        {
+            "label": "debugTCP",
+            "type": "shell",
+            "command": "mvn  -Dexec.args=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=5555,suspend=y -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9011 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dfile.encoding=iso8859-7 -Dprops.path='c:\\Users\\s.kabasakalis\\projects\\crs-engine\\crs-tcp-core\target\\conf\\' -classpath %classpath gr.forthcrs.crs.tcp.core.main.Main\"  -Dexec.executable=java  process-classes org.codehaus.mojo:exec-maven-plugin:1.2.1:exec",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
+        }
+    ]
+}
