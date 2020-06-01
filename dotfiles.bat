@@ -8,12 +8,12 @@ rem https://github.com/kabasakalis/windows-dotfiles
 
 rem Make sure the paths below are correct.
 rem Neovim with Spacevim
-SET WIN_DOTFILES_HOME=%userprofile%\windows_dotfiles
+SET WIN_DOTFILES_HOME=%userprofile%\windows-dotfiles
 SET UBUNTU_DOTFILES_HOME=%userprofile%\dotfiles
-SET NEOVIM_RUNTIME=%userprofile%\AppData\Local\nvim-data
+SET NEOVIM_RUNTIME=%userprofile%\AppData\Local\nvim
 rem Gvim 
-SET VIM_HOME="C:\Program Files\Vim"
-SET VIMFILES=%VIM_HOME%\vimfiles
+SET VIM_HOME="C:\programs\Vim"
+SET VIMFILES=%userprofile%\vimfiles
 SET VIM_RUNTIME=%VIMHOME%\vim80
 rem tools
 SET MSYS_ROOT="F:\msys64\mingw64"
@@ -26,23 +26,23 @@ SET VSSTUDIO_USER="%userprofile%\AppData\Roaming\Code\User"
 
 rem ---------------------------------- Visual Studio  User Settings ----------------------------------------------------
 
-rem mklink %VSSTUDIO_USER%\keybindings.json %UBUNTU_DOTFILES_HOME%\vscode\keybindings.json
-rem mklink %VSSTUDIO_USER%\settings.json %UBUNTU_DOTFILES_HOME%\vscode\settings.json
-rem mklink /J %VSSTUDIO_USER%\snippets %UBUNTU_DOTFILES_HOME%\vscode\snippets
+ mklink %VSSTUDIO_USER%\keybindings.json %UBUNTU_DOTFILES_HOME%\vscode\keybindings.json
+ mklink %VSSTUDIO_USER%\settings.json %UBUNTU_DOTFILES_HOME%\vscode\settings.json
+ mklink /J %VSSTUDIO_USER%\snippets %UBUNTU_DOTFILES_HOME%\vscode\snippets
 
 
 rem ---------------------------------- Neovim with Spavevim ------------------------------------------------------------
 
-rem SPACEVIM dotfiles
-mklink /J %userprofile%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim
+rem SPACEVIM install spacevim, make sure NEOVIM_RUNTIME folder does not exists.
+git clone https://github.com/SpaceVim/SpaceVim.git %NEOVIM_RUNTIME%
 
-rem SPACEVIM neovim Sym link Neovim Runtime to Spacevim
-mklink /J %NEOVIM_RUNTIME% %userprofile%\.SpaceVim
+rem SPACEVIM dotfiles (configuration)
+mklink /J %userprofile%\.SpaceVim.d %UBUNTU_DOTFILES_HOME%\spacevim
 
 rem coc.vim settings (Language Server Protocol client for vim)  for Neovim.
 rem  Note: You must have downloaded Spavevim repo in home folder before you run this command.
 rem  NEOVIM_HOME is sym linked to Spacevim installation folder. 
-mklink  %NEOVIM_RUNTIME%\coc-settings.json %UBUNTU_DOTFILES_HOME%\spacevim\config\coc-settings.json
+rem  mklink  %NEOVIM_RUNTIME%\coc-settings.json %UBUNTU_DOTFILES_HOME%\spacevim\config\coc-settings.json
 
 
 
@@ -53,15 +53,10 @@ mklink  %userprofile%\.ideavimrc %UBUNTU_DOTFILES_HOME%\neovim\.ideavimrc
 
 
 rem ---------------------------------- Aliases (add this in system Path)------------------------------------------------=
-rem mklink /J %userprofile%\aliases %WIN_DOTFILES_HOME%\aliases
+mklink /J %userprofile%\aliases %WIN_DOTFILES_HOME%\aliases
 
 rem ---------------------------------- ConEmu settings -----------------------------------------------------------------
 rem mklink  %CONEMU_HOME%\ConEmu.xml    %WIN_DOTFILES_HOME%\config\conemu.xml 
-
-
-rem ---------------------------------- ConEmu settings -----------------------------------------------------------------
-rem mklink  %CONEMU_HOME%\ConEmu.xml    %WIN_DOTFILES_HOME%\config\conemu.xml 
-
 
 rem ---------------------------------- Git Config (add this in system Path)---------------------------------------------
 mklink  %userprofile%\.gitconfig %UBUNTU_DOTFILES_HOME%\git\gitconfig
@@ -88,9 +83,9 @@ rem mklink  %VIMFILES%\coc-settings.json  %UBUNTU_DOTFILES_HOME%\spacevim\config
 
 rem ---------------------------------- Neovim (prefer Neovim with Spavevim) --------------------------------------------
 rem Attempt for NeoVim (without spacevim) dotfiles, NeoVim sucks on Windows.
-rem mklink  %NEOVIM_RUNTIME%\init.vim  %DOTFILES_HOME%\neovim\init.vim
-rem mklink  %NEOVIM_RUNTIME%\plugins.vim  %DOTFILES_HOME%\neovim\plugins.vim
-rem mklink /J  %NEOVIM_RUNTIME%\autoload  %DOTFILES_HOME%\neovim\autoload
-rem mklink /J  %NEOVIM_RUNTIME%\colors  %DOTFILES_HOME%\neovim\colors
+ mklink  %NEOVIM_RUNTIME2%\init.vim  %DOTFILES_HOME%\neovim\init.vim
+ mklink  %NEOVIM_RUNTIME2%\plugins.vim  %DOTFILES_HOME%\neovim\plugins.vim
+ mklink /J  %NEOVIM_RUNTIME2%\autoload  %DOTFILES_HOME%\neovim\autoload
+ mklink /J  %NEOVIM_RUNTIME2%\colors  %DOTFILES_HOME%\neovim\colors
 
 timeout 10
